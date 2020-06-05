@@ -60,5 +60,24 @@ g + geom_point(aes(color = bmicat)) + theme_bw(base_family = "Times")
 ```
 
 When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Ctrl+Shift+K* to preview the HTML file).
+```{r}
+testdat <- data.frame(x = 1:100, y = rnorm(100))
+testdat[50,2] <- 100  ## Outlier!
+g <- ggplot(testdat, aes(x = x, y = y))
+g + geom_line()
+```
+```{r}
+#quitamos el outlier
+g + geom_line() + ylim(-3, 3)
+```
+```{r}
+p <- g + geom_line() + coord_cartesian(ylim = c(-3, 3))
+p
+```
+```{r}
+#agregamos labels
+p + annotate("text", x = c(45,55), y = c(2,2), label = c("here1", "here2"),
+             color = c("red", "blue"))
+```
 
 The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike *Knit*, *Preview* does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.
