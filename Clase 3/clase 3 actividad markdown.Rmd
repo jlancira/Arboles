@@ -28,7 +28,50 @@ flights_data <- flights
 planes_data <- planes
 weather_data <- weather
 # Variables in flights dataset
+glimpse (flights)
+glimpse (weather)
+```
+
+```{r}
+library (nycflights13)
+library(tidyverse)
+library(patchwork)
+g <- ggplot(flights, aes(distance)) #+ scale_fill_brewer(palette = "Spectral")
+
+ 
+
+g + geom_histogram(binwidth = 0.1, 
+                  col="black", 
+                  size=.1) +  # change binwidth
+  labs(title="Histogram with Auto Binning", 
+       subtitle="Engine Displacement across Vehicle Classes")
 ```
 ```{r}
+ggplot(weather_data, aes(x = temp)) +
+  geom_histogram(binwidth = 3, color = "grey", fill = "red", alpha= 0.5) +
+  labs(x = "Temperature (degrees F)", y = "Count",
+       title = "New York City Airport Temperatures 2013")
+```
+```{r}
+ggplot(weather_data, aes(x = temp)) +
+  geom_histogram(binwidth = 3, color = "grey", aes(fill = year), alpha= 0.5) +
+  labs(x = "Temperature (degrees F)", y = "Count",
+       title = "New York City Airport Temperatures 2013")
+```
+```{r}
+glimpse (airports)
+```
+```{r}
+g <- ggplot(airports, aes(tzone))
+g + geom_density(aes(fill=factor(name)), alpha=0.5) +
+    labs(title="Density plot",
+         subtitle="City Mileage Grouped by Number of cylinders",
+         caption="Source: mpg",
+         x="City Mileage",
+         fill="# Cylinders")
+```
+```{r}
+
+```
 
 ```

@@ -1,7 +1,0 @@
-"0","g <- ggplot(mpg, aes(displ)) + scale_fill_brewer(palette = ""Spectral"")"
-"0"," "
-"0","g + geom_histogram(binwidth = 0.1, "
-"0","                   col=""black"", "
-"0","                   size=.1) +  # change binwidth"
-"0","  labs(title=""Histogram with Auto Binning"", "
-"0","       subtitle=""Engine Displacement across Vehicle Classes"") "

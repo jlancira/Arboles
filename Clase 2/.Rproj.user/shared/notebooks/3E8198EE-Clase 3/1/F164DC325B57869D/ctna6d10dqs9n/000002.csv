@@ -1,5 +1,0 @@
-"0","g + geom_histogram(aes(fill=class),"
-"0","                   bins=10,"
-"0","                   col=""black"", size = 0.1) +   # change number of bins"
-"0","  labs(title=""Histogram with Fixed Bins"","
-"0","       subtitle=""Engine Displacement across Vehicle Classes"")"

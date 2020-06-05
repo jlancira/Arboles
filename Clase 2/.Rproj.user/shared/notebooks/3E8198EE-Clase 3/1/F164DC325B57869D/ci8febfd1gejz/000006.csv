@@ -1,1 +1,0 @@
-"0","ggplot(mpg, aes(x = hwy)) + geom_histogram(aes(y=..density..), color = ""grey30"", fill = ""blue"") +geom_density(alpha = .2, fill = ""antiquewhite3"") + labs(title=""Bin width 1"")"

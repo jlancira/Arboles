@@ -1,7 +1,0 @@
-"0","    g <- ggplot(mpg, aes(class, cty))"
-"0","g + geom_boxplot(varwidth=T, fill=""dodgerblue"", alpha = 0.5) +"
-"0","    labs(title=""Box plot"","
-"0","         subtitle=""City Mileage grouped by Class of vehicle"","
-"0","         caption=""Source: mpg"","
-"0","         x=""Class of Vehicle"","
-"0","         y=""City Mileage"")"

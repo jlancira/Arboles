@@ -1,8 +1,0 @@
-"0","g <- ggplot(mpg, aes(class, cty))"
-"0","p <- g + geom_violin() +"
-"0","  labs(title=""Violin plot"","
-"0","       subtitle=""City Mileage vs Class of vehicle"","
-"0","       caption=""Source: mpg"","
-"0","       x=""Class of Vehicle"","
-"0","       y=""City Mileage"")"
-"0","p"
