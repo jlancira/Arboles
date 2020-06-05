@@ -1,0 +1,1 @@
+"0","ggplot(daily, aes(x = day, y = count, color = dest)) + geom_line()"

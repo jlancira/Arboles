@@ -1,0 +1,34 @@
+---
+title: "Clase 3 actividad markdown"
+author: "Jose Luis"
+date: "June 2, 2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+ls("package:nycflights13")
+
+#?flights
+airlines_data <- airlines
+airports_data <- airports
+flights_data <- flights
+planes_data <- planes
+weather_data <- weather
+# Variables in flights dataset
+```{r}
+ls("package:nycflights13")
+
+#?flights
+airlines_data <- airlines
+airports_data <- airports
+flights_data <- flights
+planes_data <- planes
+weather_data <- weather
+# Variables in flights dataset
+```
+```{r}
+
+```

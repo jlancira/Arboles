@@ -1,0 +1,2 @@
+"0","g <- ggplot(maacs, aes(logpm25, NocturnalSympt))"
+"0","g + geom_point()"

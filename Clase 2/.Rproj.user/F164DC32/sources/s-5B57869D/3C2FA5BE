@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1590849925584.000,
+    "dirty" : false,
+    "encoding" : "ISO8859-1",
+    "folds" : "",
+    "hash" : "1930113849",
+    "id" : "3C2FA5BE",
+    "lastKnownWriteTime" : 1590849924,
+    "last_content_update" : 1590849933382,
+    "path" : "~/Personal/Data Science/Arboles/Clase 2/Clase 2 material.Rmd",
+    "project_path" : "Clase 2 material.Rmd",
+    "properties" : {
+        "chunk_output_type" : "inline"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}

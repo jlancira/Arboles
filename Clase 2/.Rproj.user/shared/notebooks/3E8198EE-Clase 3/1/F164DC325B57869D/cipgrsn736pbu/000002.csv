@@ -1,0 +1,8 @@
+"0","g <- ggplot(mpg, aes(class, cty))"
+"0","g + geom_boxplot(aes(fill=factor(cyl))) +  scale_fill_brewer(palette = ""Spectral"") +"
+"0","  theme(axis.text.x = element_text(angle=65, vjust=0.6)) +"
+"0","  labs(title=""Box plot"","
+"0","       subtitle=""City Mileage grouped by Class of vehicle"","
+"0","       caption=""Source: mpg"","
+"0","       x=""Class of Vehicle"","
+"0","       y=""City Mileage"")"

@@ -1,0 +1,5 @@
+"0","```r
+qplot(hwy, data=mpg, facets = .~ drv, binwidth = 2, fill = drv, geom= \"density\")
+```"
+"1","Ignoring unknown parameters: binwidth
+"

@@ -1,0 +1,2 @@
+"0","p <- g + geom_line() + coord_cartesian(ylim = c(-3, 3))"
+"0","p"

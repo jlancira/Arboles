@@ -1,0 +1,24 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1590850070370.000,
+    "dirty" : false,
+    "encoding" : "ISO8859-1",
+    "folds" : "",
+    "hash" : "1213949410",
+    "id" : "7C57DE35",
+    "lastKnownWriteTime" : 1590850397,
+    "last_content_update" : 1590850717023,
+    "path" : "~/Personal/Data Science/Arboles/Clase 2/case study.Rmd",
+    "project_path" : "case study.Rmd",
+    "properties" : {
+        "chunk_output_type" : "inline",
+        "cursorPosition" : "79,38",
+        "scrollLine" : "76",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}

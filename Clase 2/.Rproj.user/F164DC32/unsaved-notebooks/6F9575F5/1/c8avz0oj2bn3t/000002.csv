@@ -1,0 +1,27 @@
+"0","g <- ggplot(maacs, aes(logpm25, NocturnalSympt))"
+"0","summary(g)"
+"1","data: logpm25, logno2_new, bmicat, NocturnalSympt [517x4]
+"
+"1","mapping:  "
+"1","x = ~logpm25, y = ~NocturnalSympt"
+"1","
+"
+"1","faceting: "
+"1","<ggproto object: Class FacetNull, Facet, gg>
+    compute_layout: function
+    draw_back: function
+    draw_front: function
+    draw_labels: function
+    draw_panels: function
+    finish_data: function
+    init_scales: function
+    map_data: function
+    params: list
+    setup_data: function
+    setup_params: function
+    shrink: TRUE
+    train_scales: function
+    vars: function
+    super:  <ggproto object: Class FacetNull, Facet, gg>"
+"1","
+"

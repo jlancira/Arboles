@@ -1,0 +1,4 @@
+"0","ggplot(weather_data, aes(x = temp)) +"
+"0","  geom_histogram(binwidth = 3, color = ""grey"", fill = ""red"", alpha= 0.5) +"
+"0","  labs(x = ""Temperature (degrees F)"", y = ""Count"","
+"0","       title = ""New York City Airport Temperatures 2013"")"

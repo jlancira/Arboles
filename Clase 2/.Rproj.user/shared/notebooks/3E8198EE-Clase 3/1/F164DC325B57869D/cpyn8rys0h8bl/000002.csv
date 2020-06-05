@@ -1,0 +1,31 @@
+"0","# Create new dataframe mpg_means_se"
+"0","mpg_means_se <- mpg %>%"
+"0","  group_by(manufacturer) %>% # Group the data by manufacturer"
+"0","  summarize(mean_cty=mean(cty), # Create variable with mean of cty per group"
+"0","            sd_cty=sd(cty), # Create variable with sd of cty per group"
+"0","            N_cty=n(), # Create new variable N of cty per group"
+"0","            se=sd_cty/sqrt(N_cty), # Create variable with se of cty per group"
+"0","            upper_limit=mean_cty+se, # Upper limit"
+"0","            lower_limit=mean_cty-se # Lower limit"
+"0","            )"
+"0","mpg_means_se"
+"1","[38;5;246m# A tibble: 15 x 7[39m
+   manufacturer mean_cty sd_cty N_cty    se upper_limit lower_limit
+   [3m[38;5;246m<chr>[39m[23m           [3m[38;5;246m<dbl>[39m[23m  [3m[38;5;246m<dbl>[39m[23m [3m[38;5;246m<int>[39m[23m [3m[38;5;246m<dbl>[39m[23m       [3m[38;5;246m<dbl>[39m[23m       [3m[38;5;246m<dbl>[39m[23m
+[38;5;250m 1[39m audi             17.6  1.97     18 0.465        18.1        17.1
+[38;5;250m 2[39m chevrolet        15    2.92     19 0.671        15.7        14.3
+[38;5;250m 3[39m dodge            13.1  2.49     37 0.409        13.5        12.7
+[38;5;250m 4[39m ford             14    1.91     25 0.383        14.4        13.6
+[38;5;250m 5[39m honda            24.4  1.94      9 0.648        25.1        23.8
+[38;5;250m 6[39m hyundai          18.6  1.50     14 0.401        19.0        18.2
+[38;5;250m 7[39m jeep             13.5  2.51      8 0.886        14.4        12.6
+[38;5;250m 8[39m land rover       11.5  0.577     4 0.289        11.8        11.2
+[38;5;250m 9[39m lincoln          11.3  0.577     3 0.333        11.7        11  
+[38;5;250m10[39m mercury          13.2  0.5       4 0.25         13.5        13  
+[38;5;250m11[39m nissan           18.1  3.43     13 0.950        19.0        17.1
+[38;5;250m12[39m pontiac          17    1         5 0.447        17.4        16.6
+[38;5;250m13[39m subaru           19.3  0.914    14 0.244        19.5        19.0
+[38;5;250m14[39m toyota           18.5  4.05     34 0.694        19.2        17.8
+[38;5;250m15[39m volkswagen       20.9  4.56     27 0.877        21.8        20.0"
+"1","
+"

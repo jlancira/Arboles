@@ -1,0 +1,3 @@
+"0","#agregamos labels"
+"0","p + annotate(""text"", x = c(45,55), y = c(2,2), label = c(""here1"", ""here2""),"
+"0","             color = c(""red"", ""blue""))"
