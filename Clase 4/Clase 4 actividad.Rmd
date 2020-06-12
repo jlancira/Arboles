@@ -1,0 +1,17 @@
+---
+title: "Clase 4"
+author: "Jose Luis"
+date: "June 9, 2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+```{r}
+install.packages("moderndive") # run in the console
+```
+```{r}
+
+```
+

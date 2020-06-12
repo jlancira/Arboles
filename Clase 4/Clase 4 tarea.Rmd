@@ -1,0 +1,112 @@
+---
+title: "Clase 4 tarea"
+author: "Jose Luis"
+date: "June 9, 2020"
+output: html_document
+---
+
+```{r}
+
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Exploratory Data Analysis (EDA)
+
+```{r}
+library(moderndive)
+```
+
+```{r}
+?house_prices
+```
+
+```{r}
+library(tidyverse)
+library(patchwork)
+```
+```{r}
+
+glimpse(house_prices)
+```
+```{r}
+p1 <- ggplot(house_prices, aes(x = bathrooms)) + geom_histogram(binwidth = .5, color="white") +
+  labs(x = "bathrooms", title = "Bathrooms")
+p1 
+```
+
+```{r}
+p2 <- ggplot(house_prices, aes(x = floors)) + geom_histogram(binwidth = .5, fill = "orange", color="white") +
+  labs(x = "floors", title = "Floors")
+p2 
+```
+
+```{r}
+p3 <- ggplot(house_prices, aes(x = grade)) + 
+  geom_bar(aes(fill=condition)) + 
+  labs(x = "grade", title = "Grade") +
+  theme(legend.position = "none")
+p3
+```
+¿
+```{r}
+(p1 + p2)/  p3
+```
+
+```{r}
+house_prices_new <- house_prices %>% 
+  mutate(log10_price = log10(price*21),
+         log10_size = log10(sqft_living*0.092903))
+glimpse(house_prices_new)
+```
+
+
+
+```{r}
+p_before <- ggplot(house_prices_new, aes(x = price)) + 
+  geom_histogram(binwidth = 200000, fill = 'yellow', color = 'white') + 
+  labs (x = 'price(USD)', title = ' House price: Before')
+p_after <- ggplot(house_prices_new, aes(x = log10_price)) + 
+  geom_histogram(bins = 40, fill = 'blue', color = 'white') + 
+  labs (x = 'price(USD)', title = ' House price: After (log scale)')
+p_before + p_after
+```
+```{r}
+#modeling
+ggplot(house_prices_new, aes(x = bathrooms, y = log10_price, color = condition)) +
+  geom_point(alpha = 1, size = 1) +
+  labs(title = "House prices in Seattle by bathrooms")
+```
+```{r}
+#es una grafica para cada condicion
+ggplot(house_prices_new, aes(x = bathrooms, y = log10_price, color = condition)) +
+  geom_point(alpha = 1, size = 1) +
+  labs(title = "House prices in Seattle by bathrooms") + 
+  facet_wrap(~condition)
+```
+```{r}
+ggplot(house_prices_new, aes(x = bathrooms, y = log10_price, color = condition)) +
+  geom_point(alpha = 1, size = 1) +
+  labs(title = "House prices in Seattle by bathroom") + 
+  facet_wrap(~condition) +
+  geom_smooth(method = "lm")
+```
+```{r}
+price_prediction <- lm(log10_price ~ bathrooms * condition, data = house_prices_new)
+parameters <- get_regression_table(price_prediction)
+parameters
+```
+```{r}
+#coeficientes de los parametros
+params <- parameters$estimate
+params
+```
+```{r}
+#Predicción
+params <- parameters$estimate
+prediction <- function(params, bathrooms, indx) {
+output <- if(indx == 1) params[1] + params[2] *bathrooms else (params[1] + params[1+indx]) +  (params[2] + params[5+indx]) *bathrooms
+return(10^(output)) 
+}
+prediction(params, 5, 3) #una casa con 5 baños y condicion 3
+```
+
