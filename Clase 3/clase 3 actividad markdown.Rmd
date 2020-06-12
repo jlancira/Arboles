@@ -40,7 +40,7 @@ g <- ggplot(flights, aes(distance)) #+ scale_fill_brewer(palette = "Spectral")
 
  
 
-g + geom_histogram(binwidth = 0.1, 
+g + geom_histogram(binwidth = 100, 
                   col="black", 
                   size=.1) +  # change binwidth
   labs(title="Histogram with Auto Binning", 
@@ -54,7 +54,7 @@ ggplot(weather_data, aes(x = temp)) +
 ```
 ```{r}
 ggplot(weather_data, aes(x = temp)) +
-  geom_histogram(binwidth = 3, color = "grey", aes(fill = year), alpha= 0.5) +
+  geom_histogram(binwidth = 3, color = "grey", aes(fill = factor(month)), alpha= 0.5) +
   labs(x = "Temperature (degrees F)", y = "Count",
        title = "New York City Airport Temperatures 2013")
 ```
@@ -62,16 +62,44 @@ ggplot(weather_data, aes(x = temp)) +
 glimpse (airports)
 ```
 ```{r}
-g <- ggplot(airports, aes(tzone))
-g + geom_density(aes(fill=factor(name)), alpha=0.5) +
+g <- ggplot(airports, aes(lat))
+g + geom_density(aes(fill=factor(tzone)), alpha=0.5) +
     labs(title="Density plot",
-         subtitle="City Mileage Grouped by Number of cylinders",
+         subtitle="Latitudes of airports grouped by Time Zone",
          caption="Source: mpg",
-         x="City Mileage",
-         fill="# Cylinders")
+         x="Latitude",
+         fill="# Airports")
 ```
 ```{r}
+g <- ggplot(airports, aes(lat, tzone))
+g + geom_boxplot(varwidth=T, fill="dodgerblue", alpha = 0.5) +
+    labs(title="Box plot",
+         subtitle="Latitudes of airports grouped by Time Zone",
+         caption="Source: mpg",
+         x="Latitude",
+         y="Time ZOne")
 
+ #Setting varwidth=T adjusts the width of the boxes to be proportional to the number of observation it contains.
+```
+```{r}
+g <- ggplot(airports, aes(lat, tzone))
+g + geom_boxplot(aes(fill=factor(tzone))) +  scale_fill_brewer(palette = "Spectral") +
+  theme(axis.text.x = element_text(angle=65, vjust=0.6)) +
+  labs(title="Box plot",
+       subtitle="Latitudes of airports grouped by Time Zone",
+       caption="Source: mpg",
+       x="Latitude",
+       y="Time Zone")
+```
+```{r}
+#Para la distribución de probabilidad
+g <- ggplot(airports, aes(lat, tzone))
+g + geom_violin() +
+  labs(title="Violin plot",
+       subtitle="Latitudes of airports grouped by Time Zone",
+       caption="Source: mpg",
+       x="Latitude",
+       y="Time Zoe")
 ```
 
 ```
